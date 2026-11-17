@@ -11,7 +11,7 @@ export default function Home() {
 
       <p className="eyebrow"></p>
 
-      <h1>Home</h1>
+      <h1>Project Management System</h1>
       
 
      <p className="description">
@@ -20,7 +20,7 @@ export default function Home() {
 
       <div className="card">
 
-        <h2>Welcome!</h2>
+        <h2>Welcome to the Home page!</h2>
 
         <p>Welcome to the app.</p>
 
