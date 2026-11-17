@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# Local environments and secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# PocketBase local database data
+pb_data/
