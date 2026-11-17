@@ -16,7 +16,9 @@ export async function GET(request: NextRequest) {
 
      // Extract the variables
 
-    const name = searchParams.get("name");
+    const brand = searchParams.get("brand");
+
+    const model = searchParams.get("model");
 
     const description = searchParams.get("description");
 
@@ -25,11 +27,11 @@ export async function GET(request: NextRequest) {
 
     // check they exist
 
-    if (!name || !description || price === null || price.trim() === "") {
+    if (!brand || !model || !description || price === null || price.trim() === "") {
 
       return NextResponse.json(
 
-        { error: "Name, description and price are required" },
+        { error: "brand, model, description and price are required" },
 
         { status: 400 }
 
@@ -41,7 +43,9 @@ export async function GET(request: NextRequest) {
 
     const product = await db.collection("products").create({
 
-      name,
+      brand,
+
+      model,
 
       description,
 

@@ -11,7 +11,7 @@ export default function Home() {
 
       <p className="eyebrow"></p>
 
-      <h1>Project Management System</h1>
+      <h1>Product Management System</h1>
       
 
      <p className="description">
