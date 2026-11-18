@@ -14,6 +14,7 @@ export default async function Products() {
 
   return (
     <section className="page">
+      
       <p className="eyebrow"></p>
       <h1>Products</h1>
       <p className="description"></p>

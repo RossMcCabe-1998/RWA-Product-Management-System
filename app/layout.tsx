@@ -81,7 +81,7 @@ export default function RootLayout({
           </Link>
 
 
-          <Link href="/addProduct">
+          <Link href="/addNewProduct">
 
             <span>○</span>
 
