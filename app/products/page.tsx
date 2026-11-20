@@ -1,20 +1,33 @@
-// app/page.tsx
-export default async function Products() {
+"use client";
 
-  // API call to backend
-  const res = await fetch('http://localhost:3000/api/getAll');
+import { useEffect, useState } from "react";
 
-  const data: {
-    id: string;
-    brand: string;
-    model: string;
-    description: string;
-    price: number;
-  }[] = await res.json();
+export default function Products() {
+  // Bucket to hold products
+  const [data, setData] = useState<any[]>([]);
+
+  // Function to get all products from getAll API
+  const getProducts = async () => {
+    const res = await fetch("/api/getAll");
+    setData(await res.json());
+  };
+
+  // Automatically run getProducts() when the page loads
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  // Function runs when click "Delete"
+  const deleteProduct = async (id: string) => {
+    await fetch(`/api/deleteProduct?id=${id}`, {
+      method: "DELETE",
+    });
+    getProducts(); // Refresh
+  };
 
   return (
     <section className="page">
-      
+
       <p className="eyebrow"></p>
       <h1>Products</h1>
       <p className="description"></p>
@@ -28,12 +41,15 @@ export default async function Products() {
             <p>Model: {item.model}</p>
             <p>Description: {item.description}</p>
             <p>Price: €{item.price}</p>
+            <button onClick={() => deleteProduct(item.id)}>
+              {item.id}
+            </button>
             <hr />
           </div>
         ))}
 
       </div>
-      
+
     </section>
   );
 }
