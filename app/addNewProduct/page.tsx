@@ -1,9 +1,8 @@
-// app/page.tsx
 "use client";
 import { useState } from "react";
 
 
-export default function addNewProduct() {
+export default function AddNewProduct() {
 
   const [brand, setBrand] = useState("");
   const [model, setModel] = useState("");

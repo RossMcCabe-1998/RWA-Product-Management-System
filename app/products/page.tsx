@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Products() {
@@ -42,8 +42,12 @@ export default function Products() {
             <p>Description: {item.description}</p>
             <p>Price: €{item.price}</p>
             <button onClick={() => deleteProduct(item.id)}>
-              {item.id}
+              Delete: {item.id}
             </button>
+            
+            <Link href={`/singleProduct?id=${item.id}`}>
+              <button>View Product</button>
+            </Link>
             <hr />
           </div>
         ))}
