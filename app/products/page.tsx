@@ -1,6 +1,8 @@
+// app/products/page.tsx
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+
 
 export default function Products() {
   // Bucket to hold products
@@ -25,6 +27,7 @@ export default function Products() {
     getProducts(); // Refresh
   };
 
+
   return (
     <section className="page">
 
@@ -47,6 +50,10 @@ export default function Products() {
             
             <Link href={`/singleProduct?id=${item.id}`}>
               <button>View Product</button>
+            </Link>
+
+            <Link href={`/editProduct?id=${item.id}`}>
+              <button>Edit</button>
             </Link>
             <hr />
           </div>

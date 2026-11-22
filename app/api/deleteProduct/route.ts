@@ -1,6 +1,7 @@
-
+// api/deleteProduct/route.ts
 import { NextResponse } from "next/server";
 import { db, authenticate } from "@/lib/database";
+
 
 export async function DELETE(request: Request) {
   // Grab the product ID from the URL

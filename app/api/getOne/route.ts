@@ -1,6 +1,7 @@
-
+// api/getOne/route.ts
 import { NextResponse } from "next/server";
 import { db, authenticate } from "@/lib/database";
+
 
 export async function GET(request: Request) {
   // Grab the product ID from the URL
